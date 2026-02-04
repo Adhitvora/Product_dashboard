@@ -3,7 +3,7 @@ import api from "../api/api.js";
 import { Link } from "react-router-dom";
 
 const submitHandler = async (e) => {
-  e.preventDefault();   // 🔥 THIS LINE IS MUST
+  e.preventDefault();  
 
   if (!email) {
     alert("Email is required");
