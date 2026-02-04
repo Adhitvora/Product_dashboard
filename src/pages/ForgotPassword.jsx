@@ -2,28 +2,23 @@ import { useState } from "react";
 import api from "../api/api.js";
 import { Link } from "react-router-dom";
 
-const ForgotPassword = () => {
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+const submitHandler = async (e) => {
+  e.preventDefault();   // 🔥 THIS LINE IS MUST
 
-  const submitHandler = async (e) => {
+  if (!email) {
+    alert("Email is required");
+    return;
+  }
 
-    if (!email) {
-      alert("Email is required");
-      return;
-    }
-
-    try {
-      setLoading(true);
-      const { data } = await api.post("/auth/forgot-password", { email });
-      setMessage(data.message || "Reset link sent to your email");
-    } catch (error) {
-      alert(error?.response?.data?.message || "Something went wrong");
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    setLoading(true);
+    const { data } = await api.post("/auth/forgot-password", { email });
+    setMessage(data.message || "Reset link sent to your email");
+  } catch (error) {
+    alert(error?.response?.data?.message || "Something went wrong");
+  } finally {
+    setLoading(false);
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
