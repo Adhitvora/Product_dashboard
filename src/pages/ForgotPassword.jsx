@@ -8,7 +8,6 @@ const ForgotPassword = () => {
   const [message, setMessage] = useState("");
 
   const submitHandler = async (e) => {
-    e.preventDefault();
 
     if (!email) {
       alert("Email is required");
