@@ -74,12 +74,12 @@ const Login = () => {
                   className="flex items-center w-full px-5 py-4 mr-2 text-sm font-medium outline-none focus:bg-blue-100 mb-7 placeholder:text-grey-700 bg-blue-50/75 text-black rounded-2xl"
                 />
                 <div className="flex flex-row justify-between mb-8">
-                  <a
-                    href="/forgotpassword"
+                  <Link
+                    to={"/forgot"}
                     className="mr-4 text-sm font-medium text-blue-500"
                   >
                     Forget password?
-                  </a>
+                  </Link>
                 </div>
                 <button
                   type="submit"
