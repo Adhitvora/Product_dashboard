@@ -3,8 +3,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProductList from "./pages/ProductList";
 import ProtectedRoute from "./route/ProtectedRoute";
-import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
+import ForgotPassword from "./pages/ForgotPassword";
 
 
 function App() {
