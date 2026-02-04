@@ -2,8 +2,13 @@ import { useState } from "react";
 import api from "../api/api.js";
 import { Link } from "react-router-dom";
 
-const submitHandler = async (e) => {
-  e.preventDefault();  
+const ForgotPassword = () => {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const submitHandler = async (e) => {
+  e.preventDefault(); 
 
   if (!email) {
     alert("Email is required");
@@ -19,7 +24,7 @@ const submitHandler = async (e) => {
   } finally {
     setLoading(false);
   }
-
+};
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm">
