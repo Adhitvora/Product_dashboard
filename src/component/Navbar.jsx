@@ -5,7 +5,7 @@ const Navbar = () => {
 
   const logout = () => {
     localStorage.clear();
-    navigate("/login");
+    navigate("/");
   };
 
   return (
